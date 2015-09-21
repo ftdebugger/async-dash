@@ -1,0 +1,32 @@
+{
+  "name": "async-dash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel/register",
+    "watch": "mocha --watch --compilers js:babel/register",
+    "build:main": "babel index.js -s inline -m umd --module-id asyncDash -o es5/asyncDash.js",
+    "build:executor": "babel lib/executor.js -s inline -m umd -o es5/lib/executor.js",
+    "build:lodash": "babel lib/lodash.js -s inline -m umd -o es5/lib/lodash.js",
+    "build": "npm run build:main && npm run build:executor && npm run build:lodash"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ftdebugger/async-dash.git"
+  },
+  "author": "Evgeny Shpilevsky <evgeny@shpilevsky.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ftdebugger/async-dash/issues"
+  },
+  "homepage": "https://github.com/ftdebugger/async-dash#readme",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "mocha": "^2.3.3"
+  },
+  "dependencies": {
+    "chai": "^3.2.0",
+    "chai-as-promised": "^5.1.0"
+  }
+}
